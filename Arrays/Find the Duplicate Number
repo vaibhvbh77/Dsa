@@ -1,0 +1,29 @@
+
+Find the Duplicate Number
+Link:https://leetcode.com/problems/find-the-duplicate-number/
+Approach:
+Brute (sort array then comapre);
+Tortoise Method(efficient)
+class Solution {
+    public int findDuplicate(int[] arr) {
+        int slow=arr[0];
+        int fast=arr[0];
+        do{
+            slow=arr[slow];
+            fast=arr[arr[fast]];
+            
+            
+        }
+        while(fast!=slow);
+        slow=arr[0];
+        while(slow!=fast){
+            slow=arr[slow];
+            fast=arr[fast];            
+        }
+        return slow;
+        
+            
+            
+        
+    }
+}
